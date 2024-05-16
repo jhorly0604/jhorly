@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by jhorly escala</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhorly M. Escala - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      transition: background-color 0.5s ease;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    nav {
+      background-color: #34495e;
+      padding: 10px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 0.5s;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #e74c3c;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .navbar-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5em;
+      color: #ecf0f1;
+    }
+
+    .navbar-links {
+      display: flex;
+    }
+
+    section {
+      padding: 20px;
+      margin: 20px;
+      background-color: #ecf0f1;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .project-card {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: auto;
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 0.5s;
+    }
+
+    form {
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.5s;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #34495e;
+    }
+
+    .education {
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.5s;
+    }
+
+    .education-item {
+      margin-bottom: 20px;
+    }
+
+    .skills {
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.5s;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .skill-item {
+      background-color: #ecf0f1;
+      color: #333;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 4px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #34495e;
+      }
+
+      .navbar-links.show {
+        display: flex;
+      }
+
+      .navbar a {
+        padding: 10px;
+        display: block;
+      }
+
+      .navbar-toggle {
+        display: block;
+      }
+
+      .projects .project-card,
+      .education,
+      .skills,
+      form,
+      footer {
+        opacity: 1;
+        transform: translateY(0);
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://raw.githubusercontent.com/jhorly0604/jhorly/main/photo_6055408716741719489_y.jpg" alt="Your Profile Picture">
+    <div>
+      <h1>Jhorly M. Escala</h1>
+      <p>Android Developer</p>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <div class="navbar-toggle" onclick="toggleNavbar()">☰</div>
+    <div class="navbar-links">
+      <a onclick="scrollToSection('about')">About</a>
+      <a onclick="scrollToSection('experience')">Experience</a>
+      <a onclick="scrollToSection('seminars')">Skills</a>
+      <a onclick="scrollToSection('seminars')">Seminars</a>
+      <a onclick="scrollToSection('education')">Education</a>
+      <a onclick="scrollToSection('projects')">Projects</a>
+      <a onclick="scrollToSection('contact')">Contact</a>
+    </div>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+I'm a dedicated Android developer at Solaire, passionate about crafting intuitive mobile experiences. With expertise in UI/UX design and backend integration, I strive to create high-quality, efficient solutions. Let's build something great together.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p><strong>IT Staff (Android Dev)</strong>
+    <p>Implemented various features and improvements using Kotlin and java.
+Collaborated with UI/UX Designers to ensure the quality of develop apps.
+Launching the app on the Play Store.</p>
+    <p><strong>Lake Community Cable TV Multi-purpose Cooperative</strong> | <strong>July 2022</strong> | <strong>Technician</strong></p>
+    <ul>
+      <li>Agent Log-in, Encode Checklist and Sales, Upload Picture to G-drive</li>
+      <li>Assist Technician</li>
+      <li>Nap Inventory Checklist</li>
+    </ul>
+  </section>
+  
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill-item">Android Development</div>
+      <div class="skill-item">Kotlin</div>
+      <div class="skill-item">Java</div>
+      <div class="skill-item">Firebase</div>
+      <div class="skill-item">HTML</div>
+      <div class="skill-item">CSS</div>
+      <!-- Add more skills as needed -->
+    </div>
+  </section>
+
+  <section id="education" class="education">
+    <h2>Education</h2>
+    <div class="education-item">
+      <p><strong>STI San Pablo 
+ Lopez Jaena St, San Pablo city
+ Bachelor of Science in Computer Engineer 
+(2023)</strong></p>
+    
+    </div>
+    <!-- Add more education items as needed -->
+  </section>
+  
+  <section id="seminars">
+    <h2>Seminars and Training Attended</h2>
+    <ul>
+      <li>Basic Occupational and Health (BOSH) For Safety Officer (March 14, 2023)</li>
+      <li>Incoming Quality Control and Producing Quality Control Procedures (April 18, 2023)</li>
+      <li>Introduction to Cybersecurity (January 23, 2023)</li>
+      <li>"Ard-U-Know" (September 13, 2019)</li>
+      <!-- Add more seminar items as needed -->
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400" alt="Project 1" onclick="openLightbox('https://via.placeholder.com/800')">
+        <h3>Color Splash</h3>
+        <p>"Color Splash" is a mobile puzzle game where players fill grayscale images with vibrant colors to reveal hidden patterns. With increasing levels of difficulty, players must strategically select colors to complete each image. The game offers hints, power-ups, and customization options, providing a relaxing yet engaging experience for players of all ages.</p>
+        <p><strong>Technologies:</strong> Android Studio, Kotlin, java, firebase</p>
+        <p><strong>Link:</strong> <a href="#" target="_blank">https://codepen.io/jhorly-escala/pen/gOEPqLz</a></p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400" alt="Project 2" onclick="openLightbox('https://via.placeholder.com/800')">
+        <h3>Project 2</h3>
+        <p>Description of Project 2. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p><strong>Technologies:</strong> Android, Java, Firebase</p>
+        <p><strong>Link:</strong> <a href="#" target="_blank">Demo</a></p>
+      </div>
+      <!-- Add more project cards -->
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Feel free to reach out to me. Let's connect and discuss exciting opportunities!</p>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+   Jhorly M. Escala
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img src="" alt="Project Image">
+  </div>
+
+ <script>
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function toggleNavbar() {
+    const navbarLinks = document.querySelector('.navbar-links');
+    navbarLinks.classList.toggle('show');
+  }
+
+  // Close navbar when a link is clicked
+  document.querySelectorAll('.navbar-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const navbarLinks = document.querySelector('.navbar-links');
+      navbarLinks.classList.remove('show');
+    });
+  });
+
+  function openLightbox(imageUrl) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = lightbox.querySelector('img');
+    lightboxImage.src = imageUrl;
+    lightbox.style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
