@@ -271,15 +271,28 @@
       }
 
       .projects .project-card,
-      .education,
-      .skills,
-      form,
-      footer {
-        opacity: 1;
-        transform: translateY(0);
-        animation: none;
-      }
-    }
+.education,
+.skills,
+form,
+footer {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.projects .project-card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.projects .project-card:hover,
+.education,
+.skills,
+form,
+footer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
   </style>
 </head>
 <body>
@@ -407,38 +420,30 @@ Launching the app on the Play Store.</p>
                 <p>NUMOKU" is a modern twist on the classic Sudoku puzzle game, available on mobile devices. Challenge your mind and sharpen your logic skills with this engaging number puzzle. Featuring multiple difficulty levels, intuitive controls, and a sleek design, NUMOKU offers endless hours of brain-teasing fun for players of all ages. Whether you're a Sudoku novice or a seasoned pro, NUMOKU is the perfect way to relax and keep your mind sharp.</p>
                 <p><strong>Technologies:</strong> Android, Java, Firebase</p>
                 <p><strong>Link:</strong> <a href="https://drive.google.com/file/d/1s3_4ltkqULvvrOpvN6P4BAMHsKygtw6a/view?usp=drive_link" target="_blank">https://drive.google.com/file/d/1s3_4ltkqULvvrOpvN6P4BAMHsKygtw6a/view?usp=drive_link</a></p>
+              
             </div>
          <div class="project-card">
     <h3>My Sample Website: 777rio.com</h3>
     <div onclick="toggleDescription('desc5')">
         <p><strong>Link:</strong> <a href="https://sites.google.com/view/777rio-com-jogos-de-cassino-on/777rio" target="_blank">https://sites.google.com/view/777rio-com-jogos-de-cassino-on/777rio</a></p>
     </div>
-    <div id="desc5" class="description" style="display:none;">
-        <p>Description of the website goes here.</p>
     </div>
            <div class="project-card">
     <h3>My Sample Website: Slots85.com</h3>
     <div onclick="toggleDescription('desc6')">
         <p><strong>Link:</strong> <a href="https://sites.google.com/view/slots85-com-cassino-online-com/home" target="_blank">https://sites.google.com/view/slots85-com-cassino-online-com/home</a></p>
     </div>
-    <div id="desc5" class="description" style="display:none;">
-        <p>Description of the website goes here.</p>
-    </div>
+             </div>
              <div class="project-card">
     <h3>My Sample Website: Jogowin.com</h3>
-    <div onclick="toggleDescription('desc5')">
+    <div onclick="toggleDescription('desc7')">
         <p><strong>Link:</strong> <a href="https://sites.google.com/view/cassinoonlinecomjogosexclusivo/jogowin-com?authuser=0" target="_blank">https://sites.google.com/view/cassinoonlinecomjogosexclusivo/jogowin-com?authuser=0</a></p>
-    </div>
-    <div id="desc5" class="description" style="display:none;">
-        <p>Description of the website goes here.</p>
-    </div>
+    </div></div>
                <div class="project-card">
     <h3>My Sample Website: 668best.com</h3>
-    <div onclick="toggleDescription('desc5')">
+    <div onclick="toggleDescription('desc8')">
         <p><strong>Link:</strong> <a href="https://sites.google.com/view/20jogo-com-explore-os-melhores/668best-com?authuser=0" target="_blank">https://sites.google.com/view/20jogo-com-explore-os-melhores/668best-com?authuser=0</a></p>
     </div>
-    <div id="desc5" class="description" style="display:none;">
-        <p>Description of the website goes here.</p>
     </div>
 </div>
         </div>
