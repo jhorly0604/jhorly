@@ -271,27 +271,15 @@
       }
 
       .projects .project-card,
-.education,
-.skills,
-form,
-footer {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.projects .project-card:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-.projects .project-card:hover,
-.education,
-.skills,
-form,
-footer {
-    opacity: 1;
-    transform: translateY(0);
-}
+      .education,
+      .skills,
+      form,
+      footer {
+        opacity: 1;
+        transform: translateY(0);
+        animation: none;
+      }
+    }
 
   </style>
 </head>
@@ -422,28 +410,30 @@ Launching the app on the Play Store.</p>
                 <p><strong>Link:</strong> <a href="https://drive.google.com/file/d/1s3_4ltkqULvvrOpvN6P4BAMHsKygtw6a/view?usp=drive_link" target="_blank">https://drive.google.com/file/d/1s3_4ltkqULvvrOpvN6P4BAMHsKygtw6a/view?usp=drive_link</a></p>
               
             </div>
-         <div class="project-card">
-    <h3>My Sample Website: 777rio.com</h3>
-    <div onclick="toggleDescription('desc5')">
+        <section class="projects">
+    <div class="project-card">
+      <h3>Simple Website 1: 777rio.com</h3>
+      <div onclick="toggleDescription('desc5')">
         <p><strong>Link:</strong> <a href="https://sites.google.com/view/777rio-com-jogos-de-cassino-on/777rio" target="_blank">https://sites.google.com/view/777rio-com-jogos-de-cassino-on/777rio</a></p>
+      </div>
     </div>
-    </div>
-           <div class="project-card">
-    <h3>My Sample Website: Slots85.com</h3>
-    <div onclick="toggleDescription('desc6')">
+    <div class="project-card">
+      <h3>Simple Website 2: Slots85.com</h3>
+      <div onclick="toggleDescription('desc6')">
         <p><strong>Link:</strong> <a href="https://sites.google.com/view/slots85-com-cassino-online-com/home" target="_blank">https://sites.google.com/view/slots85-com-cassino-online-com/home</a></p>
+      </div>
     </div>
-             </div>
-             <div class="project-card">
-    <h3>My Sample Website: Jogowin.com</h3>
-    <div onclick="toggleDescription('desc7')">
+    <div class="project-card">
+      <h3>Simple Website 3: Jogowin.com</h3>
+      <div onclick="toggleDescription('desc7')">
         <p><strong>Link:</strong> <a href="https://sites.google.com/view/cassinoonlinecomjogosexclusivo/jogowin-com?authuser=0" target="_blank">https://sites.google.com/view/cassinoonlinecomjogosexclusivo/jogowin-com?authuser=0</a></p>
-    </div></div>
-               <div class="project-card">
-    <h3>My Sample Website: 668best.com</h3>
-    <div onclick="toggleDescription('desc8')">
-        <p><strong>Link:</strong> <a href="https://sites.google.com/view/20jogo-com-explore-os-melhores/668best-com?authuser=0" target="_blank">https://sites.google.com/view/20jogo-com-explore-os-melhores/668best-com?authuser=0</a></p>
+      </div>
     </div>
+    <div class="project-card">
+      <h3>Simple Website 4: 668best.com</h3>
+      <div onclick="toggleDescription('desc8')">
+        <p><strong>Link:</strong> <a href="https://sites.google.com/view/20jogo-com-explore-os-melhores/668best-com?authuser=0" target="_blank">https://sites.google.com/view/20jogo-com-explore-os-melhores/668best-com?authuser=0</a></p>
+      </div>
     </div>
 </div>
         </div>
@@ -452,19 +442,17 @@ Launching the app on the Play Store.</p>
 
 <script>
     function toggleDescription(id) {
-        var desc = document.getElementById(id);
-        if (desc.style.display === "none") {
-            desc.style.display = "block";
-        } else {
-            desc.style.display = "none";
-        }
+      const desc = document.getElementById(id);
+      if (desc) {
+        desc.style.display = desc.style.display === 'none' ? 'block' : 'none';
+      }
     }
 </script>
 
   <section id="contact">
   <h2>Contact</h2>
-    <p>You can also contact me at: <a href="mailto:escalajhorly0604@gmail.com">escalajhorly0604@gmail.com</a></p>
-  </div>
+  <p>You can also contact me at: <a href="mailto:escalajhorly0604@gmail.com">escalajhorly0604@gmail.com</a></p>
+  <p>Or reach me by phone at: <a href="tel:09121057294">09121057294</a></p>
 </section>
 
 
